@@ -1,0 +1,1 @@
+console.log('WealthWell app loaded');
