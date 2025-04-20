@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WealthWell v2.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>WealthWell v2.0</h1>
+  <div class="section">
+    <h2>Trading Journal</h2>
+    <textarea id="journalEntry" placeholder="Write your trading thoughts..."></textarea>
+    <button onclick="saveJournal()">Save</button>
+    <button onclick="exportJournal()">Export to PDF</button>
+  </div>
+  <div class="section">
+    <h2>Emotion Tracker</h2>
+    <canvas id="emotionChart" width="400" height="200"></canvas>
+    <input type="text" id="emotionInput" placeholder="Enter emotion (e.g., happy)" />
+    <button onclick="trackEmotion()">Track</button>
+  </div>
+  <div class="section">
+    <h2>Mindset Log</h2>
+    <input type="date" id="mindsetDate" />
+    <input type="text" id="mindsetNote" placeholder="Enter affirmation or mindset note" />
+    <button onclick="logMindset()">Log</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
