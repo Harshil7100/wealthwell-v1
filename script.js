@@ -23,11 +23,19 @@ function trackEmotion() {
   localStorage.setItem('emotions', JSON.stringify(emotions));
   updateChart();
 }
+
+let chartInstance = null; // global chart instance
+
 function updateChart() {
   const emotionCounts = emotions.reduce((acc, emo) => {
     acc[emo] = (acc[emo] || 0) + 1;
     return acc;
   }, {});
+  // Destroy old chart if it exists
+  if (chartInstance !== null) {
+    chartInstance.destroy();
+  }
+  
   const ctx = document.getElementById('emotionChart').getContext('2d');
   new Chart(ctx, {
     type: 'bar',
